@@ -4,3 +4,14 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+# Set default rake task to run all tests
+require 'rake'
+require 'rspec/core/rake_task'
+ 
+RSpec::Core::RakeTask.new(:spec) do |t|
+t.pattern = Dir.glob('spec/**/*_spec.rb')
+t.rspec_opts = '--format documentation'
+end
+
+task :default => :spec

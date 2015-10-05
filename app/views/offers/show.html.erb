@@ -1,0 +1,13 @@
+<h2>Fyber Mobile Offer API</h2>
+
+<% if @offers.empty? %>
+  <p>No offers available.</p>
+<% else %>
+  <% @offers.each do |offer| %>
+    <div class="offer">
+      <p>Title: <%= offer["title"] %></p>
+      <%= image_tag offer["thumbnail"]["lowres"] %>
+      <p>Payout: <%= offer["payout"] %></p>
+    </div>
+  <% end %>
+<% end %>
