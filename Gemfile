@@ -25,6 +25,13 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'vcr'
+  gem 'webmock'
+end
+
 gem 'rails_12factor', group: :production
 
 ruby '2.2.2'
